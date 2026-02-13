@@ -63,8 +63,8 @@ export default function Navbar() {
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center">
                         <Link
-                            href="/#contact"
-                            onClick={(e) => handleScroll(e, '/#contact')}
+                            href="/contact"
+                            onClick={(e) => handleScroll(e, '/contact')}
                             className="bg-accent text-primary px-6 py-2.5 rounded-full text-sm font-bold hover:bg-accent/90 transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)]"
                         >
                             تواصل معايا
@@ -106,8 +106,8 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <Link
-                                href="/#contact"
-                                onClick={(e) => handleScroll(e, '/#contact')}
+                                href="/contact"
+                                onClick={(e) => handleScroll(e, '/contact')}
                                 className="block px-3 py-2 rounded-md text-base font-bold text-primary bg-accent hover:bg-accent/90 mt-4 text-center"
                             >
                                 تواصل معايا
