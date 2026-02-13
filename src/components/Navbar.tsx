@@ -1,20 +1,38 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-    { name: 'الرئيسية', href: '/' },
-    { name: 'من أنا', href: '/about' },
-    { name: 'أعمالي', href: '/work' },
-    { name: 'العمليات', href: '/#process' },
-    { name: 'خدماتي', href: '/#services' },
+    { name: 'الرئيسية', href: '/', type: 'link' },
+    { name: 'من أنا', href: '/about', type: 'link' },
+    { name: 'أعمالي', href: '/work', type: 'link' },
+    { name: 'العمليات', href: '/#process', type: 'scroll' },
+    { name: 'خدماتي', href: '/#services', type: 'scroll' },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+    const isHome = pathname === '/';
+
+    // Handle scroll for hash links if on homepage
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+        if (isHome && href.includes('#')) {
+            e.preventDefault();
+            const id = href.split('#')[1];
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                setIsOpen(false);
+            }
+        } else {
+            setIsOpen(false);
+        }
+    };
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 glass">
@@ -33,7 +51,9 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-foreground/80 hover:text-accent px-3 py-2 text-sm font-medium transition-colors"
+                                onClick={(e) => handleScroll(e, link.href)}
+                                className={`px-3 py-2 text-sm font-medium transition-colors ${pathname === link.href ? 'text-accent' : 'text-foreground/80 hover:text-accent'
+                                    }`}
                             >
                                 {link.name}
                             </Link>
@@ -43,7 +63,8 @@ export default function Navbar() {
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center">
                         <Link
-                            href="#contact"
+                            href="/#contact"
+                            onClick={(e) => handleScroll(e, '/#contact')}
                             className="bg-accent text-primary px-6 py-2.5 rounded-full text-sm font-bold hover:bg-accent/90 transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)]"
                         >
                             تواصل معايا
@@ -77,15 +98,16 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-accent hover:bg-white/5"
+                                    onClick={(e) => handleScroll(e, link.href)}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium hover:text-accent hover:bg-white/5 ${pathname === link.href ? 'text-accent' : 'text-foreground'
+                                        }`}
                                 >
                                     {link.name}
                                 </Link>
                             ))}
                             <Link
-                                href="#contact"
-                                onClick={() => setIsOpen(false)}
+                                href="/#contact"
+                                onClick={(e) => handleScroll(e, '/#contact')}
                                 className="block px-3 py-2 rounded-md text-base font-bold text-primary bg-accent hover:bg-accent/90 mt-4 text-center"
                             >
                                 تواصل معايا

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Filter, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link';
 
 // Mock Data - Replace with real projects later
 const allProjects = [
@@ -94,8 +95,8 @@ export default function WorkPage() {
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
                         className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${activeFilter === filter
-                                ? 'bg-accent text-primary border-accent shadow-[0_0_15px_rgba(212,175,55,0.3)]'
-                                : 'bg-transparent text-foreground/60 border-white/10 hover:border-accent/50 hover:text-foreground'
+                            ? 'bg-accent text-primary border-accent shadow-[0_0_15px_rgba(212,175,55,0.3)]'
+                            : 'bg-transparent text-foreground/60 border-white/10 hover:border-accent/50 hover:text-foreground'
                             }`}
                     >
                         {filter}
@@ -110,49 +111,50 @@ export default function WorkPage() {
             >
                 <AnimatePresence mode='popLayout'>
                     {filteredProjects.map((project) => (
-                        <motion.div
-                            layout
-                            key={project.id}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ duration: 0.3 }}
-                            className="group relative bg-[#0A192F]/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/5 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-2"
-                        >
-                            {/* Image Placeholder */}
-                            <div className={`h-64 w-full ${project.image} relative overflow-hidden`}>
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent opacity-80" />
-                                <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-medium text-white/80">
-                                    {project.category}
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <div className="p-8 relative -mt-20">
-                                <div className="flex gap-2 mb-4 flex-wrap">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-accent bg-accent/10 px-2 py-1 rounded-md">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
-                                    {project.title}
-                                </h3>
-                                <p className="text-foreground/70 text-sm leading-relaxed mb-8">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                                    <span className="text-sm font-bold text-foreground/40 group-hover:text-foreground transition-colors">
-                                        شوف الكيس ستادي
-                                    </span>
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground group-hover:bg-accent group-hover:text-primary transition-all duration-300 transform group-hover:rotate-45">
-                                        <ArrowUpRight className="w-5 h-5" />
+                        <Link href={`/work/${project.id}`} key={project.id} className="block">
+                            <motion.div
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.3 }}
+                                className="group relative bg-[#0A192F]/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/5 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-2 cursor-pointer h-full"
+                            >
+                                {/* Image Placeholder */}
+                                <div className={`h-64 w-full ${project.image} relative overflow-hidden`}>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent opacity-80" />
+                                    <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-medium text-white/80">
+                                        {project.category}
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
+
+                                {/* Content */}
+                                <div className="p-8 relative -mt-20">
+                                    <div className="flex gap-2 mb-4 flex-wrap">
+                                        {project.tags.map(tag => (
+                                            <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-accent bg-accent/10 px-2 py-1 rounded-md">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-foreground/70 text-sm leading-relaxed mb-8">
+                                        {project.description}
+                                    </p>
+
+                                    <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                                        <span className="text-sm font-bold text-foreground/40 group-hover:text-foreground transition-colors">
+                                            شوف الكيس ستادي
+                                        </span>
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground group-hover:bg-accent group-hover:text-primary transition-all duration-300 transform group-hover:rotate-45">
+                                            <ArrowUpRight className="w-5 h-5" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </AnimatePresence>
             </motion.div>
