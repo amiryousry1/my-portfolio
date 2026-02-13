@@ -11,7 +11,7 @@ const navLinks = [
     { name: 'من أنا', href: '/about', type: 'link' },
     { name: 'أعمالي', href: '/work', type: 'link' },
     { name: 'العمليات', href: '/process', type: 'link' },
-    { name: 'خدماتي', href: '/#services', type: 'scroll' },
+    { name: 'خدماتي', href: '/services', type: 'link' },
 ];
 
 export default function Navbar() {
