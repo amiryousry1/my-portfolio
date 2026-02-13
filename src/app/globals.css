@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #0f172a; /* Slate 900 - Deep Navy */
+  --color-primary-foreground: #f8fafc;
+  
+  --color-secondary: #fdfbf7; /* Off-white / Soft Beige */
+  --color-secondary-foreground: #1e293b;
+
+  --color-accent: #10b981; /* Emerald 500 - Muted Green */
+  --color-accent-foreground: #ffffff;
+  
+  --color-background: var(--color-secondary);
+  --color-foreground: var(--color-primary);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
