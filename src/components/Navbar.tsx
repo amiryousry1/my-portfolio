@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
     { name: 'الرئيسية', href: '/' },
-    { name: 'عني', href: '#about' },
-    { name: 'أعمالي', href: '#work' },
-    { name: 'العمليات', href: '#process' },
-    { name: 'خدماتي', href: '#services' },
+    { name: 'عني', href: '/about' },
+    { name: 'أعمالي', href: '/#work' },
+    { name: 'العمليات', href: '/#process' },
+    { name: 'خدماتي', href: '/#services' },
 ];
 
 export default function Navbar() {
