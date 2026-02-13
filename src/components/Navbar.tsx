@@ -10,7 +10,7 @@ const navLinks = [
     { name: 'الرئيسية', href: '/', type: 'link' },
     { name: 'من أنا', href: '/about', type: 'link' },
     { name: 'أعمالي', href: '/work', type: 'link' },
-    { name: 'العمليات', href: '/#process', type: 'scroll' },
+    { name: 'العمليات', href: '/process', type: 'link' },
     { name: 'خدماتي', href: '/#services', type: 'scroll' },
 ];
 
