@@ -9,8 +9,8 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "AI Product Builder | Portfolio",
-  description: "Building smart products with AI - converting ideas to reality.",
+  title: "Amir Yousry | Senior Vibe Engineer",
+  description: "Building world-class AI products with speed and precision.",
 };
 
 import Navbar from "@/components/Navbar";
@@ -22,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" className="scroll-smooth">
       <body
-        className={`${ibmPlexSansArabic.variable} antialiased bg-slate-50 text-slate-900`}
+        className={`${ibmPlexSansArabic.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-primary`}
       >
         <Navbar />
         {children}

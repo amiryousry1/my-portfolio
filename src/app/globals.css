@@ -2,24 +2,41 @@
 
 @theme {
   --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui, sans-serif;
-  
-  --color-primary: #0f172a; /* Slate 900 - Deep Navy */
-  --color-primary-foreground: #f8fafc;
-  
-  --color-secondary: #fdfbf7; /* Off-white / Soft Beige */
-  --color-secondary-foreground: #1e293b;
 
-  --color-accent: #10b981; /* Emerald 500 - Muted Green */
-  --color-accent-foreground: #ffffff;
-  
-  --color-background: var(--color-secondary);
-  --color-foreground: var(--color-primary);
+  --color-primary: #0A192F;
+  /* Deep Navy - Authority */
+  --color-primary-foreground: #FDFBF7;
+
+  --color-secondary: #FDFBF7;
+  /* Soft Off-white - Balance */
+  --color-secondary-foreground: #0A192F;
+
+  --color-accent: #D4AF37;
+  /* Soft Gold - Premium */
+  --color-accent-foreground: #0A192F;
+
+  --color-background: var(--color-primary);
+  --color-foreground: var(--color-secondary);
 }
 
 /* Custom Utilities */
 @layer utilities {
   .rtl {
     direction: rtl;
+  }
+
+  .glass {
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #FDFBF7, #D4AF37);
   }
 }
 
@@ -29,4 +46,5 @@ body {
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }

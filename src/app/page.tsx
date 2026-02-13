@@ -7,7 +7,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden">
       <Hero />
       <AboutSection />
       <WorkSection />
