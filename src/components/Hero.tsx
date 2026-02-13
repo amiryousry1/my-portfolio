@@ -29,12 +29,12 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]"
+                    className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[1.2]"
                 >
-                    بصمم منتجات
-                    <br className="hidden sm:block" />
+                    أنا Product Designer…
+                    <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-200">
-                        تغیّر السوق
+                        وبحوّل الأفكار لمنتجات شغّالة بالـ AI
                     </span>
                 </motion.h1>
 
@@ -42,26 +42,30 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-xl sm:text-2xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+                    className="text-xl sm:text-2xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed"
                 >
-                    أنا مش بس مصمم، أنا شريكك التقني. بستخدم الذكاء الاصطناعي عشان أحول الفكرة اللي في خيالك لمنتج حقيقي، شغال، وبيجيب فلوس.
-                    <span className="text-accent font-medium block mt-2">من غير رغي كتير، شغل بيتحس.</span>
+                    من أول التفكير في المشكلة، لحد تصميم وتنفيذ MVP حقيقي باستخدام <span className="text-accent font-bold">Vibe Coding</span>
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+                    className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
                 >
-                    <Link href="#work" className="group relative px-8 py-4 bg-accent text-primary rounded-full font-bold text-lg transition-all hover:bg-accent/90 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(212,175,55,0.4)] flex items-center gap-2">
-                        شوف الإبداع
-                        <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-                    </Link>
-
-                    <Link href="#contact" className="px-8 py-4 bg-transparent text-foreground border border-foreground/20 rounded-full font-medium text-lg transition-all hover:border-accent hover:text-accent hover:bg-accent/5">
-                        احجز استشارة
-                    </Link>
+                    <a
+                        href="#work"
+                        className="px-8 py-4 bg-accent text-primary rounded-full font-bold text-lg hover:bg-accent/90 transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1 w-full sm:w-auto"
+                    >
+                        شوف شغلي
+                    </a>
+                    <a
+                        href="#contact"
+                        className="group px-8 py-4 bg-transparent border border-foreground/10 text-foreground rounded-full font-bold text-lg hover:bg-white/5 hover:border-accent transition-all w-full sm:w-auto flex items-center justify-center gap-2"
+                    >
+                        خلّينا نبني حاجة
+                        <Rocket className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                    </a>
                 </motion.div>
 
                 {/* Stats / Trust Badges */}
@@ -89,6 +93,15 @@ export default function Hero() {
                     </div>
                 </motion.div>
             </div>
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 1 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/30 animate-bounce"
+            >
+                <ArrowLeft className="w-6 h-6 -rotate-90" />
+            </motion.div>
         </section>
     );
 }

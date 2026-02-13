@@ -1,28 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, Zap, Palette, Brain, Rocket, Code2 } from 'lucide-react';
+import { Palette, Bot, Code2 } from 'lucide-react';
 
 const services = [
     {
-        icon: <Brain className="w-6 h-6" />,
-        title: 'AI Integration & Agents',
-        description: 'بخلي تطبيقك يفكر. بدمج موديلات الذكاء الاصطناعي (LLMs) لعمل وكلاء أذكياء بيخلصوا شغل بدالك.'
+        icon: <Palette className="w-8 h-8" />,
+        title: 'Product Design',
+        description: 'تصميم واجهات وتجربة مستخدم (UI/UX) مش بس شكلها حلو، دي "شغالة" وبتحل مشاكل. بعمل Design Systems كاملة تخلي المنتج بتاعك جاهز للتطوير.',
+        tags: ['Figma', 'Prototyping', 'Design Systems']
     },
     {
-        icon: <Palette className="w-6 h-6" />,
-        title: 'Premium UX/UI Design',
-        description: 'تصميمات مش بس شكلها حلو، دي "بتاكل" السوق. تجربة مستخدم تخلي العميل مايخرجش من عندك.'
+        icon: <Bot className="w-8 h-8" />,
+        title: 'AI-powered MVPs',
+        description: 'بحول فكرتك لمنتج شغال (MVP) في وقت قياسي باستخدام أدوات الذكاء الاصطناعي. بختار الموديل المناسب وببني "Agent" يخدم البيزنس.',
+        tags: ['LLMs Integration', 'Prompt Engineering', 'Automation']
     },
     {
-        icon: <Rocket className="w-6 h-6" />,
-        title: 'Vibe Coding (MVP)',
-        description: 'ببني النسخة الأولى من منتجك (MVP) بسرعة البرق، بس بكواليتي شركات كبيرة. كود نضيف، وسريع.'
-    },
-    {
-        icon: <Sparkles className="w-6 h-6" />,
-        title: 'Micro-Interactions',
-        description: 'التفاصيل الصغيرة اللي بتفرق. حركات وأنيميشنز تخلي تطبيقك "حي" وممتع في الاستخدام.'
+        icon: <Code2 className="w-8 h-8" />,
+        title: 'Vibe Coding',
+        description: 'كود "Vibe" نضيف، سريع، وكله حركة. بستخدم أحدث التكنولوجيات عشان أخلي الموقع "حي" وتجربته تعلق مع المستخدم.',
+        tags: ['Next.js', 'Tailwind', 'Framer Motion']
     }
 ];
 
@@ -38,9 +36,9 @@ export default function ServicesSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl font-bold sm:text-5xl mb-6 text-foreground"
+                        className="text-4xl font-bold sm:text-5xl mb-6 text-foreground"
                     >
-                        مش بس كود.. <span className="text-accent">دي تجربة كاملة</span>
+                        بعمل إيه؟
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -49,12 +47,11 @@ export default function ServicesSection() {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-foreground/70 leading-relaxed"
                     >
-                        أنا بقدملك "الخلطة السرية" اللي بتنجح المنتجات العالمية.
-                        تصميم شيك، ذكاء اصطناعي، وأداء صاروخي.
+                        أنا مش بس بصمم، أنا ببنيلك المنتج كامل. عندي الـ Stack اللي يخلينا نتحرك بسرعة.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -62,17 +59,24 @@ export default function ServicesSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-white/10 transition-all duration-300"
+                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-white/10 transition-all duration-300 flex flex-col"
                         >
-                            <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                            <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-foreground/70 leading-relaxed">
+                            <p className="text-foreground/70 leading-relaxed mb-8 flex-grow">
                                 {service.description}
                             </p>
+                            <div className="flex flex-wrap gap-2">
+                                {service.tags.map(tag => (
+                                    <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-foreground/60">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </motion.div>
                     ))}
                 </div>
