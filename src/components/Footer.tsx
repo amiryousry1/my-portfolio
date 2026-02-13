@@ -5,10 +5,10 @@ export default function Footer() {
         <footer className="bg-primary border-t border-white/5 py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p className="text-foreground/50 text-sm flex items-center gap-2">
-                    © {new Date().getFullYear()} Ahmed. Designed & Built with <span className="text-red-500">♥</span> & <span className="text-accent">AI</span>
+                    © {new Date().getFullYear()} Amir Yousry. Designed & Built with <span className="text-red-500">♥</span> & <span className="text-accent">AI</span>
                 </p>
                 <div className="flex space-x-8 space-x-reverse">
-                    <Link href="#" className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium">
+                    <Link href="https://www.linkedin.com/in/amiryousry" target="_blank" className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium">
                         LinkedIn
                     </Link>
                     <Link href="#" className="text-foreground/60 hover:text-accent transition-colors text-sm font-medium">

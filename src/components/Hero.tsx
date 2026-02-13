@@ -53,19 +53,19 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
                 >
-                    <a
-                        href="#work"
-                        className="px-8 py-4 bg-accent text-primary rounded-full font-bold text-lg hover:bg-accent/90 transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1 w-full sm:w-auto"
+                    <Link
+                        href="/work"
+                        className="px-8 py-4 bg-accent text-primary rounded-full font-bold text-lg hover:bg-accent/90 transition-all hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center"
                     >
                         شوف شغلي
-                    </a>
-                    <a
-                        href="#contact"
+                    </Link>
+                    <Link
+                        href="/contact"
                         className="group px-8 py-4 bg-transparent border border-foreground/10 text-foreground rounded-full font-bold text-lg hover:bg-white/5 hover:border-accent transition-all w-full sm:w-auto flex items-center justify-center gap-2"
                     >
                         خلّينا نبني حاجة
                         <Rocket className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-                    </a>
+                    </Link>
                 </motion.div>
 
                 {/* Stats / Trust Badges */}
