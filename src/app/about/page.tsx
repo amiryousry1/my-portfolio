@@ -51,7 +51,7 @@ export default function AboutPage() {
 
             {/* Section 2: How I work? */}
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5 relative">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url('/grid.svg')" }} />
                 <div className="max-w-5xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
