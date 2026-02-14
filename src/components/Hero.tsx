@@ -32,7 +32,7 @@ export default function Hero() {
                                 {/* Placeholder for User Image */}
                                 <div className="w-20 h-20 rounded-full border border-[#22d3ee]/30 overflow-hidden relative">
                                     <Image
-                                        src="/my-portfolio/me.png"
+                                        src="/me.png"
                                         alt="Amir Yousry"
                                         fill
                                         className="object-cover"
