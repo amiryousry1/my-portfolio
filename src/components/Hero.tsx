@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
-import { ArrowLeft, PlayCircle, TrendingUp, Palette, Sparkles, Zap } from 'lucide-react';
+import React from 'react';
+import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { ArrowLeft, Palette, Sparkles, Zap } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AuroraBackground } from '@/components/ui/aurora-background';
@@ -39,10 +39,10 @@ export default function Hero() {
     return (
         <AuroraBackground className="min-h-screen !h-auto overflow-hidden">
             <section className="relative z-10 w-full min-h-screen flex items-center justify-center pt-32 pb-12 lg:py-0">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full items-center">
 
                     {/* RIGHT: Content Side (Text) - 1st on Mobile, 2nd on Desktop (RTL layout) */}
-                    <div className="order-1 lg:order-1 flex flex-col items-center lg:items-end text-center lg:text-right">
+                    <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-right w-full">
 
                         {/* Magnetic Badge */}
                         <motion.div
@@ -91,7 +91,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7 }}
-                            className="text-base lg:text-xl text-white/60 leading-relaxed max-w-2xl mb-10 font-light"
+                            className="text-base lg:text-xl text-white/60 leading-relaxed max-w-2xl mb-10 font-light text-center lg:text-right"
                         >
                             بحول الأفكار المعقدة لمنتجات <span className="text-white font-semibold">سهلة</span>، <span className="text-white font-semibold">ذكية</span>، <span className="text-white font-semibold">وبتبيع</span>.
                             بساعد الشركات الناشئة ورواد الأعمال يبنوا منتجات بيحبها المستخدمين.
@@ -102,7 +102,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.9 }}
-                            className="flex flex-row-reverse gap-6 w-full sm:w-auto"
+                            className="flex flex-col sm:flex-row-reverse gap-4 w-full sm:w-auto justify-center lg:justify-start"
                         >
                             <Link href="/work" className="group relative">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-[#22d3ee] to-[#0ea5e9] rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
