@@ -8,7 +8,7 @@ const brands = [
 
 export default function CredibilitySection() {
     return (
-        <section className="py-10 bg-primary/50 border-y border-white/5">
+        <section className="py-6 bg-primary/50 border-y border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                     <p className="text-foreground/40 font-bold text-sm tracking-widest uppercase whitespace-nowrap">

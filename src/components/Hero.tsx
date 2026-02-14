@@ -38,7 +38,7 @@ export default function Hero() {
 
     return (
         <AuroraBackground className="min-h-screen !h-auto overflow-hidden">
-            <section className="relative z-10 w-full min-h-screen flex items-center justify-center py-20 lg:py-0">
+            <section className="relative z-10 w-full min-h-screen flex items-center justify-center pt-32 pb-12 lg:py-0">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full items-center">
 
                     {/* RIGHT: Content Side (Text) - 1st on Mobile, 2nd on Desktop (RTL layout) */}
@@ -62,7 +62,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
                                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-[1.1] tracking-tighter"
+                                className="text-4xl sm:text-6xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter"
                             >
                                 <span className="inline-block bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
                                     من أول فكرة
@@ -80,7 +80,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.5, duration: 0.8 }}
-                                className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white/80 mt-2"
+                                className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white/80 mt-2"
                             >
                                 وأنا معاك <span className="text-white underline decoration-[#22d3ee]/50 decoration-wavy decoration-2 underline-offset-8">خطوة بخطوة</span>
                             </motion.h2>
@@ -91,7 +91,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7 }}
-                            className="text-lg lg:text-2xl text-white/60 leading-relaxed max-w-2xl mb-10 font-light"
+                            className="text-base lg:text-xl text-white/60 leading-relaxed max-w-2xl mb-10 font-light"
                         >
                             بحول الأفكار المعقدة لمنتجات <span className="text-white font-semibold">سهلة</span>، <span className="text-white font-semibold">ذكية</span>، <span className="text-white font-semibold">وبتبيع</span>.
                             بساعد الشركات الناشئة ورواد الأعمال يبنوا منتجات بيحبها المستخدمين.
@@ -194,7 +194,7 @@ export default function Hero() {
                                     {/* Bottom: Info */}
                                     <div className="text-center w-full bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/5 transform transition-transform group-hover:translate-y-[-10px]">
                                         <h3 className="text-3xl font-bold text-white mb-2">أمير يسري</h3>
-                                        <p className="text-[#22d3ee] font-medium tracking-wide text-sm mb-4">ENGINEER OF VIBES</p>
+                                        <p className="text-[#22d3ee] font-medium tracking-wide text-xs mb-4">AI-driven UX | Product Design</p>
 
                                         <div className="flex justify-center gap-3">
                                             {[1, 2, 3].map((i) => (
@@ -207,38 +207,11 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            {/* Floating Parallax Elements OUTSIDE the card via translateZ, but moved by parallaxX/Y hooks */}
-                            <motion.div
-                                style={{ x: parallaxX, y: parallaxY, transform: "translateZ(80px)" }}
-                                className="absolute -right-8 top-1/4 bg-[#1E293B] p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-3 z-20"
-                            >
-                                <div className="w-10 h-10 bg-[#22d3ee]/20 text-[#22d3ee] rounded-full flex items-center justify-center">
-                                    <TrendingUp size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-[10px] text-gray-400 font-bold uppercase">Growth</div>
-                                    <div className="text-white font-bold text-lg">+124%</div>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                style={{ x: useTransform(parallaxX, v => -v), y: useTransform(parallaxY, v => -v), transform: "translateZ(60px)" }}
-                                className="absolute -left-8 bottom-1/4 bg-[#1E293B] p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-3 z-20"
-                            >
-                                <div className="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-full flex items-center justify-center">
-                                    <Sparkles size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-[10px] text-gray-400 font-bold uppercase">Creativity</div>
-                                    <div className="text-white font-bold text-lg">High</div>
-                                </div>
-                            </motion.div>
-
                         </motion.div>
                     </div>
 
                 </div>
-            </section>
-        </AuroraBackground>
+            </section >
+        </AuroraBackground >
     );
 }
