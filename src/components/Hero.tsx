@@ -30,8 +30,13 @@ export default function Hero() {
                             <div className="h-2/3 bg-neutral-200/5 m-4 rounded-xl flex items-center justify-center relative overflow-hidden">
                                 <div className="absolute inset-0 bg-neutral-800/50" />
                                 {/* Placeholder for User Image */}
-                                <div className="w-20 h-20 rounded-full bg-[#22d3ee]/20 border border-[#22d3ee]/30 blur-sm flex items-center justify-center">
-                                    <span className="text-[#22d3ee] text-xs">Image</span>
+                                <div className="w-20 h-20 rounded-full border border-[#22d3ee]/30 overflow-hidden relative">
+                                    <Image
+                                        src="/my-portfolio/me.png"
+                                        alt="Amir Yousry"
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                             </div>
 
