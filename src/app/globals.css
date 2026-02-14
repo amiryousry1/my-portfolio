@@ -3,20 +3,20 @@
 @theme {
   --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #0A192F;
-  /* Deep Navy - Authority */
-  --color-primary-foreground: #FDFBF7;
+  --color-primary: #020617;
+  /* Deep Blue/Black - Hero Match */
+  --color-primary-foreground: #FFFFFF;
 
-  --color-secondary: #FDFBF7;
-  /* Soft Off-white - Balance */
-  --color-secondary-foreground: #0A192F;
+  --color-secondary: #051120;
+  /* Slightly Lighter Blue */
+  --color-secondary-foreground: #FFFFFF;
 
-  --color-accent: #D4AF37;
-  /* Soft Gold - Premium */
-  --color-accent-foreground: #0A192F;
+  --color-accent: #22d3ee;
+  /* Cyan - Tech */
+  --color-accent-foreground: #020617;
 
   --color-background: var(--color-primary);
-  --color-foreground: var(--color-secondary);
+  --color-foreground: var(--color-primary-foreground);
 
   --animate-aurora: aurora 60s linear infinite;
 

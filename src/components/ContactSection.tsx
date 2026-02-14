@@ -6,9 +6,9 @@ import { Button } from './ui/moving-border';
 
 export default function ContactSection() {
     return (
-        <section id="contact" className="py-32 bg-[#050C16] relative overflow-hidden">
+        <section id="contact" className="py-32 bg-gradient-to-br from-[#020617] via-[#051120] to-[#020617] relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_70%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.03),transparent_70%)]" />
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <motion.div
@@ -27,7 +27,7 @@ export default function ContactSection() {
                         <a href="mailto:contact@amiryousry.com">
                             <Button
                                 borderRadius="2rem"
-                                className="bg-accent text-primary border-transparent font-bold"
+                                className="bg-[#22d3ee] text-[#020617] border-transparent font-bold hover:bg-[#1fb8cf]"
                             >
                                 <Mail className="w-5 h-5 mr-2" />
                                 ابعت إيميل
@@ -37,13 +37,13 @@ export default function ContactSection() {
                         <div className="flex gap-4">
                             <a
                                 href="https://linkedin.com/in/amiryousry"
-                                className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-accent transition-all hover:scale-110"
+                                className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-[#22d3ee] transition-all hover:scale-110"
                             >
                                 <Linkedin className="w-6 h-6" />
                             </a>
                             <a
                                 href="https://github.com/amiryousry1"
-                                className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-accent transition-all hover:scale-110"
+                                className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-[#22d3ee] transition-all hover:scale-110"
                             >
                                 <Github className="w-6 h-6" />
                             </a>
