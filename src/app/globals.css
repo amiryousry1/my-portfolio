@@ -17,6 +17,18 @@
 
   --color-background: var(--color-primary);
   --color-foreground: var(--color-secondary);
+
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
 }
 
 /* Custom Utilities */
