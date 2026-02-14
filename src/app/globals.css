@@ -1,74 +1,74 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui, sans-serif;
+    --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #020617;
-  /* Deep Blue/Black - Hero Match */
-  --color-primary-foreground: #FFFFFF;
+    --color-primary: #020617;
+    /* Deep Blue/Black - Hero Match */
+    --color-primary-foreground: #FFFFFF;
 
-  --color-secondary: #051120;
-  /* Slightly Lighter Blue */
-  --color-secondary-foreground: #FFFFFF;
+    --color-secondary: #051120;
+    /* Slightly Lighter Blue */
+    --color-secondary-foreground: #FFFFFF;
 
-  --color-accent: #22d3ee;
-  /* Cyan - Tech */
-  --color-accent-foreground: #020617;
+    --color-accent: #22d3ee;
+    /* Cyan - Tech */
+    --color-accent-foreground: #020617;
 
-  --color-background: var(--color-primary);
-  --color-foreground: var(--color-primary-foreground);
+    --color-background: var(--color-primary);
+    --color-foreground: var(--color-primary-foreground);
 
-  --animate-aurora: aurora 60s linear infinite;
+    --animate-aurora: aurora 60s linear infinite;
 
-  @keyframes aurora {
-    from {
-      background-position: 50% 50%, 50% 50%;
+    @keyframes aurora {
+        from {
+            background-position: 50% 50%, 50% 50%;
+        }
+
+        to {
+            background-position: 350% 50%, 350% 50%;
+        }
     }
 
-    to {
-      background-position: 350% 50%, 350% 50%;
-    }
-  }
+    --animate-move: move 40s linear infinite;
 
-  --animate-move: move 40s linear infinite;
+    @keyframes move {
+        0% {
+            transform: translateX(-200px);
+        }
 
-  @keyframes move {
-    0% {
-      transform: translateX(-200px);
+        100% {
+            transform: translateX(200px);
+        }
     }
-
-    100% {
-      transform: translateX(200px);
-    }
-  }
 }
 
 /* Custom Utilities */
 @layer utilities {
-  .rtl {
-    direction: rtl;
-  }
+    .rtl {
+        direction: rtl;
+    }
 
-  .glass {
-    background: rgba(10, 25, 47, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  }
+    .glass {
+        background: rgba(10, 25, 47, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
 
-  .text-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right, #FDFBF7, #D4AF37);
-  }
+    .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right, #FDFBF7, #D4AF37);
+    }
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
