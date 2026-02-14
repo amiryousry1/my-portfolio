@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className="scroll-smooth">
+    <html lang="ar" dir="rtl" className="scroll-smooth dark">
       <body
         className={`${ibmPlexSansArabic.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-primary`}
       >
