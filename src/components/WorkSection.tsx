@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from "./ui/moving-border";
 
 const projects = [
     {
@@ -59,28 +58,44 @@ export default function WorkSection() {
                                 transition={{ delay: index * 0.1 }}
                                 className="relative bg-[#0A192F] border border-white/5 rounded-2xl overflow-hidden hover:border-[#22d3ee]/50 transition-all duration-300 h-full flex flex-col group-hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]"
                             >
-                                <p className="text-foreground/70 leading-relaxed mb-8 flex-grow">
-                                    {project.description}
-                                </p>
+                                <div className="p-8 h-full flex flex-col">
+                                    <div className="flex justify-between items-start mb-6">
+                                        <div className="flex gap-2 flex-wrap">
+                                            {project.tags.map(tag => (
+                                                <span key={tag} className="px-3 py-1 bg-[#22d3ee]/10 border border-[#22d3ee]/20 text-[#22d3ee] rounded-full text-xs font-medium">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <ExternalLink className="w-5 h-5 text-white/40 group-hover:text-[#22d3ee] transition-colors" />
+                                    </div>
 
-                                <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                                    <span className="text-sm font-medium text-foreground/50 group-hover:text-foreground transition-colors">عرض التفاصيل</span>
-                                    <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
-                                        <ArrowUpRight className="w-4 h-4" />
+                                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#22d3ee] transition-colors">
+                                        {project.title}
+                                    </h3>
+
+                                    <p className="text-white/70 leading-relaxed mb-8 flex-grow">
+                                        {project.description}
+                                    </p>
+
+                                    <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+                                        <span className="text-sm font-medium text-white/50 group-hover:text-white transition-colors">عرض التفاصيل</span>
+                                        <div className="w-8 h-8 rounded-full bg-[#22d3ee]/10 flex items-center justify-center text-[#22d3ee] opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
+                                            <ArrowUpRight className="w-4 h-4" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
                         </Link>
                     ))}
-            </div>
+                </div>
 
-            <div className="mt-12 text-center md:hidden">
-                <Link href="/work" className="inline-flex items-center gap-2 text-accent font-bold">
-                    شوف كل المشاريع <ArrowUpRight className="w-5 h-5" />
-                </Link>
+                <div className="mt-12 text-center md:hidden">
+                    <Link href="/work" className="inline-flex items-center gap-2 text-[#22d3ee] font-bold">
+                        شوف كل المشاريع <ArrowUpRight className="w-5 h-5" />
+                    </Link>
+                </div>
             </div>
-        </div>
-        </section >
+        </section>
     );
 }
