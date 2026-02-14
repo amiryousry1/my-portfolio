@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[75499,["/my-portfolio/_next/static/chunks/b3e47133cb2206ac.js","/my-portfolio/_next/static/chunks/2a474827bead6d2c.js","/my-portfolio/_next/static/chunks/e16040352538e2c8.js"],"default"]
-3:I[97367,["/my-portfolio/_next/static/chunks/ff1a16fafef87110.js","/my-portfolio/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"gbe0Uuxk1svSWCJt0odTN","rsc":["$","$1","c",{"children":[["$","$L2",null,{"project":{"title":"Project Details","role":"Product Designer","duration":"N/A","tools":["Figma","React"],"overview":"تفاصيل المشروع ده لسه بتتكتب. بس تأكد إنه كان تجربة مميزة! 😉","problem":"جاري إضافة التفاصيل...","solution":"جاري إضافة التفاصيل...","process":[],"results":[]}}],[["$","script","script-0",{"src":"/my-portfolio/_next/static/chunks/e16040352538e2c8.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
-5:null
