@@ -14,8 +14,8 @@ export default function Hero() {
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full items-center">
 
-                {/* LEFT: Visual Side (3D Card & Floating Badges) */}
-                <div className="relative order-2 lg:order-1 flex justify-center lg:justify-start">
+                {/* LEFT: Visual Side (3D Card & Floating Badges) -> Now Right due to order-2 */}
+                <div className="relative order-2 lg:order-2 flex justify-center lg:justify-start">
                     {/* Main 3D Card Container */}
                     <motion.div
                         initial={{ opacity: 0, x: -50, rotateY: -10 }}
@@ -29,16 +29,18 @@ export default function Hero() {
                             {/* Mockup Content inside the card */}
                             <div className="h-2/3 bg-neutral-200/5 m-4 rounded-xl flex items-center justify-center relative overflow-hidden">
                                 <div className="absolute inset-0 bg-neutral-800/50" />
-                                {/* Simple Geometric Shape */}
-                                <div className="w-20 h-20 rounded-full bg-[#d4af37]/20 border border-[#d4af37]/30 blur-sm" />
+                                {/* Placeholder for User Image */}
+                                <div className="w-20 h-20 rounded-full bg-[#22d3ee]/20 border border-[#22d3ee]/30 blur-sm flex items-center justify-center">
+                                    <span className="text-[#22d3ee] text-xs">Image</span>
+                                </div>
                             </div>
 
                             <div className="px-6 py-4">
                                 <span className="inline-block px-3 py-1 bg-green-500/10 text-green-400 text-[10px] font-medium rounded-full mb-3 border border-green-500/20">
-                                    New Course Launching ●
+                                    متاح للعمل ●
                                 </span>
-                                <h3 className="text-2xl font-bold text-white mb-1">أكاديمية يسر</h3>
-                                <p className="text-white/40 text-xs">تعلم تصميم تجربة المستخدم من الصفر للإحتراف</p>
+                                <h3 className="text-2xl font-bold text-white mb-1">أمير يسري</h3>
+                                <p className="text-white/40 text-xs">مصمم واجهات وتجربة مستخدم</p>
                             </div>
                         </div>
                     </motion.div>
@@ -76,8 +78,8 @@ export default function Hero() {
                     </motion.div>
                 </div>
 
-                {/* RIGHT: Content Side */}
-                <div className="order-1 lg:order-2 flex flex-col items-center lg:items-end text-center lg:text-right">
+                {/* RIGHT: Content Side -> Now Left due to order-1 */}
+                <div className="order-1 lg:order-1 flex flex-col items-center lg:items-end text-center lg:text-right">
 
                     {/* Status Badge */}
                     <motion.div
@@ -96,15 +98,16 @@ export default function Hero() {
                         transition={{ delay: 0.2 }}
                         className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1] tracking-tight"
                     >
-                        بصمم <span className="text-[#22d3ee] relative inline-block">
-                            تجارب...
+                        من أول فكرة <br />
+                        <span className="text-[#22d3ee] relative inline-block">
+                            لمنتج شغال...
                             {/* Underline decoration */}
                             <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#22d3ee]/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
                             </svg>
                         </span>
                         <br />
-                        <span className="text-white">مش شاشات</span>
+                        <span className="text-white">وأنا معاك خطوة بخطوة</span>
                     </motion.h1>
 
                     {/* Role / Tags */}
