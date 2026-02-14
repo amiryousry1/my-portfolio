@@ -29,6 +29,18 @@
       background-position: 350% 50%, 350% 50%;
     }
   }
+
+  --animate-move: move 40s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-200px);
+    }
+
+    100% {
+      transform: translateX(200px);
+    }
+  }
 }
 
 /* Custom Utilities */

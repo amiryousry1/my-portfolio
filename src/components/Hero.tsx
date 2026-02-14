@@ -1,86 +1,100 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowLeft, Rocket } from 'lucide-react';
+import { ArrowLeft, Rocket, PlayCircle } from 'lucide-react';
 import Link from 'next/link';
-import { AuroraBackground } from './ui/aurora-background';
+import { BackgroundBeams } from './ui/background-beams';
 import BlurIn from './ui/blur-in';
 
 export default function Hero() {
     return (
-        <AuroraBackground>
-            <motion.div
-                initial={{ opacity: 0.0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                    delay: 0.3,
-                    duration: 0.8,
-                    ease: "easeInOut",
-                }}
-                className="relative flex flex-col gap-4 items-center justify-center px-4"
-            >
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold mb-4 backdrop-blur-sm">
-                    <Sparkles className="w-4 h-4" />
-                    <span className="uppercase tracking-wider">Product Designer | Founder of Yusr Academy | AI-driven UX</span>
-                </div>
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050C16]">
+            <BackgroundBeams />
 
-                {/* Headlines using BlurIn */}
-                <div className="text-center space-y-2 mb-6">
+            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full pt-20">
+                {/* Top Label */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium mb-8 backdrop-blur-md"
+                >
+                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                    <span>SENIOR PRODUCT DESIGNER & VIBE ENGINEER</span>
+                </motion.div>
+
+                {/* Main Headlines */}
+                <div className="mb-8 space-y-4">
                     <BlurIn
                         word="بصمم تجارب..."
-                        className="text-5xl md:text-8xl font-bold text-white tracking-tight"
-                        duration={1.5}
+                        className="text-6xl md:text-9xl font-bold text-white tracking-tighter leading-none"
+                        duration={1}
                     />
-                    <BlurIn
-                        word="مش شاشات"
-                        className="text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 tracking-tight"
-                        duration={1.5}
-                    />
+                    <div className="relative inline-block">
+                        <BlurIn
+                            word="مش شاشات."
+                            className="text-6xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-amber-200 to-accent tracking-tighter leading-none"
+                            duration={1.5}
+                        />
+                        {/* Glow under text */}
+                        <div className="absolute inset-0 bg-accent/20 blur-[100px] -z-10" />
+                    </div>
                 </div>
 
-                {/* Description */}
+                {/* Subheadline */}
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.8 }}
-                    className="text-xl md:text-2xl text-neutral-200 py-4 max-w-2xl text-center leading-relaxed"
+                    transition={{ delay: 0.8, duration: 0.8 }}
+                    className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed mb-12"
                 >
-                    بحول الأفكار المعقدة لمنتجات <span className="text-accent font-bold">سهلة</span>، <span className="text-accent font-bold">ذكية</span>، و<span className="text-accent font-bold">بتبيع</span>.
+                    بحول الأفكار المعقدة لمنتجات <span className="text-white font-semibold">ذكية</span>، <span className="text-white font-semibold">سهلة</span>، ولها <span className="text-accent">روح (Vibe)</span>.
                 </motion.p>
 
                 {/* CTAs */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 w-full"
+                    transition={{ delay: 1, duration: 0.8 }}
+                    className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto"
                 >
                     <Link
                         href="/work"
-                        className="px-8 py-4 bg-accent text-primary rounded-full font-bold text-lg hover:bg-accent/90 transition-all hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] hover:-translate-y-1 w-full sm:w-auto text-center"
+                        className="group relative px-10 py-5 bg-accent text-primary rounded-full font-bold text-lg overflow-hidden transition-transform hover:scale-105"
                     >
-                        شوف شغلي
+                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        <span className="relative">شوف شغلي</span>
                     </Link>
+
                     <Link
                         href="/contact"
-                        className="group px-8 py-4 bg-transparent border border-white/20 text-white rounded-full font-bold text-lg hover:bg-white/10 hover:border-accent transition-all w-full sm:w-auto flex items-center justify-center gap-2"
+                        className="group px-10 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center gap-3 backdrop-blur-sm"
                     >
-                        احكيلي فكرتك
-                        <Rocket className="w-4 h-4 group-hover:-translate-y-1 transition-transform text-cyan-400" />
+                        <span>احكيلي فكرتك</span>
+                        <Rocket className="w-5 h-5 group-hover:-translate-y-1 transition-transform text-accent" />
                     </Link>
                 </motion.div>
 
-                {/* Scroll Indicator */}
+                {/* Abstract Visual Anchor (Liquid/Orb Vibe) */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
-                    className="absolute bottom-[-150px] md:bottom-[-200px] left-1/2 -translate-x-1/2 text-white/50 animate-bounce"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.2, duration: 1.5 }}
+                    className="mt-20 relative w-full max-w-3xl aspect-[16/9] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#050C16]"
                 >
-                    <ArrowLeft className="w-6 h-6 -rotate-90" />
+                    {/* Abstract Content Placeholder - mimicking the Asset Defense / Liquid feel */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple-500/5"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent/20 rounded-full blur-[100px] animate-pulse" />
+
+                    {/* Mock UI Elements */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                            <PlayCircle className="w-16 h-16 text-white/20 mx-auto mb-4" />
+                            <p className="text-white/20 text-sm font-mono tracking-widest uppercase">Showreel 2026</p>
+                        </div>
+                    </div>
                 </motion.div>
-            </motion.div>
-        </AuroraBackground>
+            </div>
+        </section>
     );
 }
