@@ -6,12 +6,11 @@ import { Lightbulb, Presentation, Palette, Code2, Rocket } from 'lucide-react';
 const steps = [
     {
         icon: Lightbulb,
-        title: '1. الاستكشاف (The Spark)',
-        description: 'بنسيب كل حاجة ونتكلم. بفهم منك الفكرة، الهدف، ومين اللي هيمسك المنتج في الآخر.'
+        title: '1. الاستكشاف',
+        description: 'بفهم منك الفكرة والهدف.'
     },
     {
         icon: Presentation,
-        title: '2. الاستراتيجية (The Plan)',
         description: 'مش بنرمي كود وخلاص. بنحط خطة إزاي الذكاء الاصطناعي هيخدم البيزنس بتاعك.'
     },
     {

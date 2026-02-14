@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from "./ui/moving-border";
 
 const projects = [
     {

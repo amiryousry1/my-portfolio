@@ -1,34 +1,50 @@
-'use client';
+"use client";
 
 import { motion } from 'framer-motion';
-import { Palette, Bot, Code2 } from 'lucide-react';
+import { Palette, Bot, Code2, Smartphone } from 'lucide-react';
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import { cn } from '@/lib/utils';
+
+const Skeleton = ({ className }: { className?: string }) => (
+    <div className={cn("flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 animate-pulse border border-white/5", className)}></div>
+);
 
 const services = [
     {
-        icon: <Palette className="w-8 h-8" />,
         title: 'Product Design',
-        description: 'تصميم واجهات وتجربة مستخدم (UI/UX) مش بس شكلها حلو، دي "شغالة" وبتحل مشاكل. بعمل Design Systems كاملة تخلي المنتج بتاعك جاهز للتطوير.',
-        tags: ['Figma', 'Prototyping', 'Design Systems']
+        description: 'تصميم واجهات وتجربة مستخدم (UI/UX) مش بس شكلها حلو، دي "شغالة" وبتحل مشاكل. بعمل Design Systems كاملة.',
+        header: <Skeleton className="bg-gradient-to-br from-purple-500/20 to-blue-500/20" />,
+        icon: <Palette className="w-6 h-6" />,
+        className: "md:col-span-2",
     },
     {
-        icon: <Bot className="w-8 h-8" />,
         title: 'AI-powered MVPs',
-        description: 'بحول فكرتك لمنتج شغال (MVP) في وقت قياسي باستخدام أدوات الذكاء الاصطناعي. بختار الموديل المناسب وببني "Agent" يخدم البيزنس.',
-        tags: ['LLMs Integration', 'Prompt Engineering', 'Automation']
+        description: 'بحول فكرتك لمنتج شغال (MVP) في وقت قياسي باستخدام أدوات الذكاء الاصطناعي.',
+        header: <Skeleton className="bg-gradient-to-br from-pink-500/20 to-rose-500/20" />,
+        icon: <Bot className="w-6 h-6" />,
+        className: "md:col-span-1",
     },
     {
-        icon: <Code2 className="w-8 h-8" />,
         title: 'Vibe Coding',
-        description: 'كود "Vibe" نضيف، سريع، وكله حركة. بستخدم أحدث التكنولوجيات عشان أخلي الموقع "حي" وتجربته تعلق مع المستخدم.',
-        tags: ['Next.js', 'Tailwind', 'Framer Motion']
-    }
+        description: 'كود "Vibe" نضيف، سريع، وكله حركة. بستخدم أحدث التكنولوجيات عشان أخلي الموقع "حي".',
+        header: <Skeleton className="bg-gradient-to-br from-amber-500/20 to-yellow-500/20" />,
+        icon: <Code2 className="w-6 h-6" />,
+        className: "md:col-span-1",
+    },
+    {
+        title: 'Mobile Apps',
+        description: 'تطبيقات موبايل (iOS & Android) بتصميمات عصرية وأداء ممتاز.',
+        header: <Skeleton className="bg-gradient-to-br from-green-500/20 to-emerald-500/20" />,
+        icon: <Smartphone className="w-6 h-6" />,
+        className: "md:col-span-2",
+    },
 ];
 
 export default function ServicesSection() {
     return (
-        <section id="services" className="py-32 bg-primary relative overflow-hidden">
-            {/* Background Decor */}
-            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2" />
+        <section id="services" className="py-32 bg-[#050C16] relative overflow-hidden">
+            {/* Background Element */}
+            <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20">
@@ -36,7 +52,7 @@ export default function ServicesSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl font-bold sm:text-5xl mb-6 text-foreground"
+                        className="text-4xl font-bold sm:text-5xl mb-6 text-white"
                     >
                         بعمل إيه؟
                     </motion.h2>
@@ -45,41 +61,24 @@ export default function ServicesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-foreground/70 leading-relaxed"
+                        className="text-lg text-white/70 leading-relaxed"
                     >
                         أنا مش بس بصمم، أنا ببنيلك المنتج كامل. عندي الـ Stack اللي يخلينا نتحرك بسرعة.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-white/10 transition-all duration-300 flex flex-col"
-                        >
-                            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform duration-300">
-                                {service.icon}
-                            </div>
-                            <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
-                                {service.title}
-                            </h3>
-                            <p className="text-foreground/70 leading-relaxed mb-8 flex-grow">
-                                {service.description}
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                                {service.tags.map(tag => (
-                                    <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-foreground/60">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
+                <BentoGrid className="max-w-4xl mx-auto">
+                    {services.map((item, i) => (
+                        <BentoGridItem
+                            key={i}
+                            title={item.title}
+                            description={item.description}
+                            header={item.header}
+                            icon={item.icon}
+                            className={item.className}
+                        />
                     ))}
-                </div>
+                </BentoGrid>
             </div>
         </section>
     );

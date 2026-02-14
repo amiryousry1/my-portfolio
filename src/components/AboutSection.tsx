@@ -7,12 +7,12 @@ const features = [
     {
         icon: Terminal,
         title: 'Senior Engineer',
-        description: 'مش بكتب كود وخلاص. بكتب Systems تعيش، تكبر، وماتقعش منك وقت الجد.'
+        description: 'بكتب Systems تعيش وتكبر.'
     },
     {
         icon: Cpu,
         title: 'AI Native',
-        description: 'الذكاء الاصطناعي مش مجرد أداة، ده الدراع اليمين بتاعي. بستخدمه عشان أوفر عليك وقت وفلوس.'
+        description: 'بستخدم الذكاء الاصطناعي كدراع يمين.'
     },
     {
         icon: Zap,
